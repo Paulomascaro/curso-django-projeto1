@@ -5,7 +5,9 @@ from django.shortcuts import render
 
 # HTTP REQUEST
 def home(request):
-    return render(request, 'home.html')
+    return render(request, 'recipes/home.html', context={
+        'name': 'Paulo R. Mascaro',
+    })
 
 def contato(request):
     return HttpResponse('contato')
