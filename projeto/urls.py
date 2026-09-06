@@ -35,9 +35,26 @@ from django.contrib import admin
 # pyrefly: ignore [missing-import]
 from django.urls import path
 
-jls_extract_var = path
+# pyrefly: ignore [missing-import]
+from django.http import HttpResponse
+
+
+def home(request):
+    return HttpResponse('home')
+
+
+def contato(request):
+    return HttpResponse('contato')
+
+
+def sobre(request):
+    return HttpResponse('sobre')
+
+
+
 urlpatterns = [
-    jls_extract_var('admin/', admin.site.urls),
-
+    path('admin/', admin.site.urls),
+    path('', home),         # Home
+    path('sobre/', sobre),    # /sobre/
+    path('contato/', contato)   # /contato/
 ]
-
